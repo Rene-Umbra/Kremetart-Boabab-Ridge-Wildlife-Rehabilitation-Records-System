@@ -1,1 +1,0 @@
-AnimalID|Name|Species|Age|RecoveryScore|Status|HousingUnit
