@@ -28,13 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.dgvAnimals = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAnimals)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.AutoSize = true;
+            this.btnDelete.Location = new System.Drawing.Point(532, 375);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(101, 26);
+            this.btnDelete.TabIndex = 0;
+            this.btnDelete.Text = "Delete Animal";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // dgvAnimals
+            // 
+            this.dgvAnimals.AllowUserToAddRows = false;
+            this.dgvAnimals.AllowUserToDeleteRows = false;
+            this.dgvAnimals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAnimals.Location = new System.Drawing.Point(34, 37);
+            this.dgvAnimals.MultiSelect = false;
+            this.dgvAnimals.Name = "dgvAnimals";
+            this.dgvAnimals.ReadOnly = true;
+            this.dgvAnimals.RowTemplate.Height = 24;
+            this.dgvAnimals.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAnimals.Size = new System.Drawing.Size(380, 262);
+            this.dgvAnimals.TabIndex = 1;
+            this.dgvAnimals.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAnimals_CellContentClick);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvAnimals);
+            this.Controls.Add(this.btnDelete);
+            this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAnimals)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.DataGridView dgvAnimals;
     }
 }
 

@@ -11,7 +11,6 @@ namespace Kremetart_Ridge_WinForm_Project
 {
     public partial class Form1 : Form
     {
-        private DataGridView dgvAnimals = new DataGridView();
 
         private TextBox txtAnimalId = new TextBox();
         private TextBox txtName = new TextBox();
@@ -423,6 +422,103 @@ namespace Kremetart_Ridge_WinForm_Project
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearFields();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvAnimals.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select an animal to delete");
+                return;
+                
+            }
+
+            DataGridViewRow selectedRow = dgvAnimals.SelectedRows[0];
+            string animalID = Convert.ToString(selectedRow.Cells[0].Value);
+            string animalName = Convert.ToString(selectedRow.Cells[1].Value);
+
+            DialogResult Answer = MessageBox.Show($"Delete {animalID} ({animalName})? This cannot be undone.", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if ( Answer == DialogResult.No )
+            {
+                return;
+            }
+
+            List<Animal> animals;
+            int skipped;
+
+            if (!LoadAnimals(out animals, out skipped))
+            {
+
+                return;
+            }
+
+            Animal animalToDelete = null;
+            foreach (Animal animal in animals)
+            {
+                if(animal.AnimalId == animalID)
+                {
+                    animalToDelete = animal;
+                    break;
+
+                }
+
+                if (animalToDelete == null)
+                {
+                    MessageBox.Show("Animal not found.");
+                    return;
+                }
+
+                animals.Remove(animalToDelete);
+            }
+            
+            if (!RewriteAnimals(animals))
+            {
+                return;
+            }
+
+            if (selectedAnimalId == animalID)
+            {
+                ClearFields();
+            }
+
+            RefreshGrid();
+            MessageBox.Show("Animal deleted successfully.");
+        }
+        
+        private bool RewriteAnimals(List<Animal> animals)
+        {
+            string path = Path.Combine(Application.StartupPath, "animals.txt");
+            List<string> lines = new List<string>();
+
+            foreach (Animal animal in animals)
+            {
+                lines.Add(animal.ToFileLine());
+            }
+
+            try
+            {
+                File.WriteAllLines(path, lines, new UTF8Encoding(false));
+                return true;
+            }
+            catch (IOException)
+            {
+
+                MessageBox.Show("Unable to save animal records");
+                return false;
+            }
+
+            catch (UnauthorizedAccessException)
+            {
+                MessageBox.Show("Permission to save the file was denied");
+                return false;
+            }
+
+        }
+
+        private void dgvAnimals_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
