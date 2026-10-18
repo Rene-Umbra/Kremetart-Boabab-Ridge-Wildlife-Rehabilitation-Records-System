@@ -36,7 +36,7 @@
             // btnDelete
             // 
             this.btnDelete.AutoSize = true;
-            this.btnDelete.Location = new System.Drawing.Point(602, 235);
+            this.btnDelete.Location = new System.Drawing.Point(532, 375);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(101, 26);
             this.btnDelete.TabIndex = 0;
@@ -55,8 +55,9 @@
             this.dgvAnimals.ReadOnly = true;
             this.dgvAnimals.RowTemplate.Height = 24;
             this.dgvAnimals.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAnimals.Size = new System.Drawing.Size(690, 181);
+            this.dgvAnimals.Size = new System.Drawing.Size(380, 262);
             this.dgvAnimals.TabIndex = 1;
+            this.dgvAnimals.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAnimals_CellContentClick);
             // 
             // Form1
             // 
