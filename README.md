@@ -4,7 +4,7 @@ A C# Windows Forms desktop application that records every animal in care at the 
 
 Data is stored in plain text files only - no database or storage-related NuGet packages are used.
 
-***GitHub Repository:** https://github.com/Rene-Umbra/Kremetart-Boabab-Ridge-Wildlife-Rehabilitation-Records-System
+**GitHub Repository:** https://github.com/Rene-Umbra/Kremetart-Boabab-Ridge-Wildlife-Rehabilitation-Records-System
 
 ---
 ## 1. Team Members
