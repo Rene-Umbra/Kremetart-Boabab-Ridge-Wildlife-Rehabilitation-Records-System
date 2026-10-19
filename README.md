@@ -233,13 +233,13 @@ The repository is public
 ---
 ## 8. Known limitations
 
-The project targets .NET Framework 4.7.2 rather than .NET 8.0 as stated in the brief; this follows the supplied Visual Studio scaffold. Behaviour is otherwise identical to the brief.
+- The project targets .NET Framework 4.7.2 (Visual Studio scaffold) rather than .NET 8.0. Behaviour matches the brief in every other respect.
+  
+- `animals.txt` is reloaded after each add/update/delete; external edits made while the program is running are not picked up until the next reload.
 
-animals.txt is loaded once on startup and reloaded after each add/update/delete; external edits made to the file while the program is running are not picked up until the next reload action.
+- The summary is generated on demand only.
 
-The summary is generated on demand via the Generate Summary button; it is not regenerated automatically when data changes.
-
-Only one animal can be deleted at a time (as required).
+- Only one animal can be deleted at a time (as required).
 
 The grid does not support sorting/filtering beyond the Search box; records are shown in file order.
 
