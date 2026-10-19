@@ -241,8 +241,8 @@ The repository is public
 
 - Only one animal can be deleted at a time (as required).
 
-The grid does not support sorting/filtering beyond the Search box; records are shown in file order.
+- The grid does not support sorting/filtering beyond the Search box; records are shown in file order.
 
-There is no undo for delete or update (the confirmation dialog is the only safeguard).
+- There is no undo for delete or update (the confirmation dialog is the only safeguard).
 
 
