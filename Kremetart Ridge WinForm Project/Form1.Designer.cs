@@ -1,4 +1,4 @@
-﻿namespace Kremetart_Ridge_WinForm_Project
+namespace Kremetart_Ridge_WinForm_Project
 {
     partial class Form1
     {
@@ -30,6 +30,8 @@
         {
             this.btnDelete = new System.Windows.Forms.Button();
             this.dgvAnimals = new System.Windows.Forms.DataGridView();
+            this.btnGenerateSummary = new System.Windows.Forms.Button();
+            this.txtSummaryOutput = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnimals)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,11 +61,35 @@
             this.dgvAnimals.TabIndex = 1;
             this.dgvAnimals.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAnimals_CellContentClick);
             // 
+            // btnGenerateSummary
+            // 
+            this.btnGenerateSummary.AutoSize = true;
+            this.btnGenerateSummary.Location = new System.Drawing.Point(532, 415);
+            this.btnGenerateSummary.Name = "btnGenerateSummary";
+            this.btnGenerateSummary.Size = new System.Drawing.Size(140, 26);
+            this.btnGenerateSummary.TabIndex = 2;
+            this.btnGenerateSummary.Text = "Generate Summary";
+            this.btnGenerateSummary.UseVisualStyleBackColor = true;
+            this.btnGenerateSummary.Click += new System.EventHandler(this.btnGenerateSummary_Click);
+            // 
+            // txtSummaryOutput
+            // 
+            this.txtSummaryOutput.Font = new System.Drawing.Font("Consolas", 9F);
+            this.txtSummaryOutput.Location = new System.Drawing.Point(450, 37);
+            this.txtSummaryOutput.Multiline = true;
+            this.txtSummaryOutput.Name = "txtSummaryOutput";
+            this.txtSummaryOutput.ReadOnly = true;
+            this.txtSummaryOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtSummaryOutput.Size = new System.Drawing.Size(320, 320);
+            this.txtSummaryOutput.TabIndex = 3;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtSummaryOutput);
+            this.Controls.Add(this.btnGenerateSummary);
             this.Controls.Add(this.dgvAnimals);
             this.Controls.Add(this.btnDelete);
             this.Name = "Form1";
@@ -78,6 +104,7 @@
 
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridView dgvAnimals;
+        private System.Windows.Forms.Button btnGenerateSummary;
+        private System.Windows.Forms.TextBox txtSummaryOutput;
     }
 }
-
